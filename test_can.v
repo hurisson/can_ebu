@@ -1,9 +1,9 @@
 module test_can (
 
-	input          CLK,	
+  input          CLK,	
   input          RX,
   output         TX,    
-	output [2:0]   LED
+  output [2:0]   LED
 
 );
 
