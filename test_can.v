@@ -28,7 +28,7 @@ always @(posedge CLK) begin
   if (en_cnt)
     cnt_timer <= cnt_timer +1'b1;
   else
-	  cnt_timer <=0;
+    cnt_timer <=0;
 end
 
 
