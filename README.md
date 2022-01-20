@@ -1,7 +1,7 @@
 # can_ebu
 
 ```
-Подготовка к проверке контроллера интерфейса CAN c использованием ELM327 и FPGA
+can_ebu
 ```
 Необходимое оборудование: FPGA - Cyclone V GX Stater Board, диагностический адаптер
 ELM 327 BT, модуль CAN-bus TJA 1050 , Android-смартфон, DSLogic U 2 Basic
