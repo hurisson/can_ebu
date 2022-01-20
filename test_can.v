@@ -1,17 +1,15 @@
 module test_can (
 
 	input          CLK,	
-   input          RX,
-   output         TX,    
+  input          RX,
+  output         TX,    
 	output [2:0]   LED
 
 );
 
-
-
 logic [25:0] cnt_clk;
 logic [31:0] cnt_timer = 32'h0000_0000;
-
+logic en_cnt = 0;   
 
 assign LED[0] = cnt_clk[23];
 assign LED[1] = TX;
@@ -21,8 +19,6 @@ always @(posedge CLK) begin
   cnt_clk <= cnt_clk + 1'b1;
 end
     
-
-logic en_cnt = 0;   
 always @(posedge CLK) begin
   if (~RX)
     en_cnt <=1;
@@ -32,7 +28,7 @@ always @(posedge CLK) begin
   if (en_cnt)
     cnt_timer <= cnt_timer +1'b1;
   else
-	 cnt_timer <=0;
+	  cnt_timer <=0;
 end
 
 
@@ -84,9 +80,7 @@ always_comb begin
 		else if (cnt_timer > 32'h0004_7a14 & cnt_timer < 32'h0004_7c6c) // CRC 000
 				TX <=0;		
 		else		
-				TX <='z;
+				TX <=1;
 end				
-
-
 
 endmodule
